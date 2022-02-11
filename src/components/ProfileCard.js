@@ -1,5 +1,4 @@
 import React from "react";
-
 const ProfileCard = ({
   picture,
   name,
@@ -10,15 +9,20 @@ const ProfileCard = ({
   dob,
 }) => {
   return (
-    <div className="flex flex-col bg-white shadow-sm rounded-md border-l-4 border-l-green-500 sm:flex-row">
+    <div
+      data-testId = "profile-card"
+      className="flex flex-col bg-white shadow-sm rounded-md border-l-4 border-l-green-500 sm:flex-row"
+    >
       {/*profile picture  */}
-      <div className="w-full sm:w-64 bg-gray-300 max-h-full">
-        <img
-          className="h-full w-full mx-auto"
-          src={picture.large}
-          alt="profile"
-        />
-      </div>
+      {picture && (
+        <div className="w-full sm:w-64 bg-gray-300 max-h-full">
+          <img
+            className="h-full w-full mx-auto"
+            src={picture.large}
+            alt="profile"
+          />
+        </div>
+      )}
       {/* end of profile picture */}
       {/* user detail */}
       <div className=" p-3 ">
@@ -45,39 +49,47 @@ const ProfileCard = ({
           <div className="grid md:grid-cols-2 text-sm">
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">First Name</div>
-              <div className="px-4 py-2">{name.first}</div>
+              {name ? (
+                <div className="px-4 py-2">{name.first}</div>
+              ) : null}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Last Name</div>
-              <div className="px-4 py-2">{name.last}</div>
+              {name ? <div className="px-4 py-2">{name.last}</div> : null}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Gender</div>
-              <div className="px-4 py-2">{gender}</div>
+              {gender ? <div className="px-4 py-2">{gender}</div> : null}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Contact No.</div>
-              <div className="px-4 py-2">{phone}</div>
+              {phone ? <div className="px-4 py-2">{phone}</div> : null}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Current Address</div>
-              <div className="px-4 py-2">{location.state}</div>
+              {location ? (
+                <div className="px-4 py-2">{location.state}</div>
+              ) : null}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Permanant Address</div>
-              <div className="px-4 py-2">{location.city}</div>
+              {location ? (
+                <div className="px-4 py-2">{location.city}</div>
+              ) : null}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Email.</div>
               <div className="px-4 py-2">
-                <a className="text-blue-800" href="mailto:jane@example.com">
-                  {email}
-                </a>
+                {email ? (
+                  <a className="text-blue-800" href="mailto:jane@example.com">
+                    {email}
+                  </a>
+                ) : null}
               </div>
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Birthday</div>
-              <div className="px-4 py-2">{dob.date}</div>
+              {dob ? <div className="px-4 py-2">{dob.date}</div> : null}
             </div>
           </div>
         </div>
