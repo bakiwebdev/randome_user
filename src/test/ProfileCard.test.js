@@ -32,6 +32,7 @@ test("Image should not display if img file is null", () => {
 test("Should display firstName in the DOM", () => {
   const name = {
     first: "John",
+    last: "Doe",
   };
   render(<ProfileCard name={name} />);
   const profileCard = screen.getByTestId("profile-card");

@@ -51,31 +51,31 @@ const ProfileCard = ({
               <div className="px-4 py-2 font-semibold">First Name</div>
               {name ? (
                 <div className="px-4 py-2">{name.first}</div>
-              ) : null}
+              ) : <span>--</span>}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Last Name</div>
-              {name ? <div className="px-4 py-2">{name.last}</div> : null}
+              {name ? <div className="px-4 py-2">{name.last}</div> : <span>--</span>}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Gender</div>
-              {gender ? <div className="px-4 py-2">{gender}</div> : null}
+              {gender ? <div className="px-4 py-2">{gender}</div> : <span>--</span>}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Contact No.</div>
-              {phone ? <div className="px-4 py-2">{phone}</div> : null}
+              {phone ? <div className="px-4 py-2">{phone}</div> : <span>--</span>}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Current Address</div>
               {location ? (
                 <div className="px-4 py-2">{location.state}</div>
-              ) : null}
+              ) : <span>--</span>}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Permanant Address</div>
               {location ? (
                 <div className="px-4 py-2">{location.city}</div>
-              ) : null}
+              ) : <span>--</span>}
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Email.</div>
@@ -84,12 +84,12 @@ const ProfileCard = ({
                   <a className="text-blue-800" href="mailto:jane@example.com">
                     {email}
                   </a>
-                ) : null}
+                ) : <span>--</span>}
               </div>
             </div>
             <div className="grid grid-cols-2">
               <div className="px-4 py-2 font-semibold">Birthday</div>
-              {dob ? <div className="px-4 py-2">{dob.date}</div> : null}
+              {dob ? <div className="px-4 py-2">{dob.date}</div> : <span>--</span>}
             </div>
           </div>
         </div>
